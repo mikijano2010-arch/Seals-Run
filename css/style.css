@@ -15,10 +15,12 @@ body{
 
 #game{
     position:relative;
-    width:100%;
+
+    width:95vw;
     max-width:900px;
-    height:500px;
-    margin:auto;
+
+    aspect-ratio:9/5;
+
     overflow:hidden;
 
     background-image:url("../assets/images/background/background.png");
@@ -391,5 +393,39 @@ body{
 #restartButton:hover{
 
     transform:scale(1.05);
+
+}
+
+@media (max-width: 768px){
+
+    #hud{
+        font-size:20px;
+    }
+
+    #progress{
+        width:150px;
+        height:10px;
+    }
+
+    #seal{
+        width:60px;
+        height:60px;
+        left:80px;
+    }
+
+    #rock{
+        width:45px;
+        height:45px;
+    }
+
+    #cloud1{
+        width:90px;
+        height:40px;
+    }
+
+    #cloud2{
+        width:120px;
+        height:50px;
+    }
 
 }
