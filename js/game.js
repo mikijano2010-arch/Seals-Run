@@ -5,6 +5,10 @@ const game = document.getElementById("game");
 const playButton = document.getElementById("playButton");
 const cloud1 = document.getElementById("cloud1");
 const cloud2 = document.getElementById("cloud2");
+function gameWidth(){
+    return game.clientWidth;
+}
+
 const jumpSound = new Audio("assets/audio/jump.mp3");
 const correctSound = new Audio("assets/audio/correct.mp3");
 const wrongSound = new Audio("assets/audio/wrong.mp3");
@@ -19,7 +23,7 @@ let y = 110;
 let velocity = 0;
 let jumping = false;
 
-let rockX = 900;
+let rockX = gameWidth();
 let rockSpeed = 6;
 let rockSize = 50;
 let cloud1X = 600;
@@ -231,7 +235,7 @@ function update(){
 
     if(rockX < -rockSize){
 
-    rockX = 900;
+    rockX = gameWidth();
 
     rockSpeed = Math.random()*4 + 5;
 
@@ -324,7 +328,7 @@ function update(){
         velocity=0;
         jumping=false;
 
-        rockX=900;
+        rockX=gameWidth();
 
         gameOver=false;
 
@@ -342,11 +346,11 @@ cloud1X -= 0.5;
 cloud2X -= 0.3;
 
 if(cloud1X < -150){
-    cloud1X = 900;
+    cloud1X = gameWidth();
 }
 
 if(cloud2X < -200){
-    cloud2X = 900;
+    cloud2X = gameWidth();
 }
 
 cloud1.style.left = cloud1X + "px";
@@ -449,7 +453,7 @@ continueButton.addEventListener("click", () => {
 
     showingQuestion = false;
 
-    rockX = 900;
+    rockX = gameWidth();
     rock.style.left = rockX + "px";
 
     answers.forEach(button => {
@@ -476,7 +480,7 @@ restartButton.addEventListener("click", () => {
     velocity = 0;
     jumping = false;
 
-    rockX = 900;
+    rockX = gameWidth();
     rock.style.left = rockX + "px";
 
     gameOver = false;
